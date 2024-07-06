@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 1000px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        p {
+            font-size: 16px;
+            color: #555;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Movie List</h1>
+        {% if genre_input %}
+        <p>Showing results for genre: {{ genre_input }}</p>
+        {% endif %}
+        <table id="movieTable">
+            <thead>
+                <tr>
+                    <th>Serial No.</th>
+                    <th>Title</th>
+                    <th>Year</th>
+                    <th>Genres</th>
+                    <th>Country</th>
+                    <th>Language</th>
+                    <th>Duration</th>
+                    <th>IMDB Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for movie in movies %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ movie.Title }}</td>
+                    <td>{{ movie.Year }}</td>
+                    <td>{{ movie.Genres }}</td>
+                    <td>{{ movie.Country }}</td>
+                    <td>{{ movie.Language }}</td>
+                    <td>{{ movie.Duration }}</td>
+                    <td>{{ movie.IMDBScore }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
+<!-- templates/show_movies.html -->
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Movie List</title>
+</head>
+<body>
+    <h1>Movie List</h1>
+    {% if genre_input %}
+    <p>Showing results for genre: {{ genre_input }}</p>
+    {% endif %}
+    <table id="movieTable" border="1">
+        <thead>
+            <tr>
+                <th>Serial No.</th>
+                <th>Title</th>
+                <th>Year</th>
+                <th>Genres</th>
+                <th>Country</th>
+                <th>Language</th>
+                <th>Duration</th>
+                <th>IMDB Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for movie in movies %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ movie.Title }}</td>
+                <td>{{ movie.Year }}</td>
+                <td>{{ movie.Genres }}</td>
+                <td>{{ movie.Country }}</td>
+                <td>{{ movie.Language }}</td>
+                <td>{{ movie.Duration }}</td>
+                <td>{{ movie.IMDBScore }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html> -->

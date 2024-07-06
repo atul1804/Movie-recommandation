@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Movies</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            font-size: 24px;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #555555;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Search Movies by Genre</h1>
+        <form method="get" action="{% url 'genresearch' %}">
+            <label for="genre">Filter by Genre:</label>
+            <input type="text" id="genre" name="genre" value="">
+            <button type="submit">Filter</button>
+        </form>
+        <h1>Search Movies by Name</h1>
+        <form method="get" action="{% url 'moviesearch' %}">
+            <label for="title">Filter by Name:</label>
+            <input type="text" id="title" name="title" value="">
+            <button type="submit">Filter</button>
+        </form>
+    </div>
+</body>
+</html>
+
+<!-- <body>
+    <h1>Search Movies by Genre</h1>
+    <form method="get" action="{% url 'genresearch' %}">
+        <label for="genre">Filter by Genre:</label>
+        <input type="text" id="genre" name="genre" value="">
+        <button type="submit">Filter</button>
+    </form>
+    <h1>Search Movies by name</h1>
+    <form method="get" action="{% url 'moviesearch' %}">
+        <label for="title">Filter by Name:</label>
+        <input type="text" id="title" name="title" value="">
+        <button type="submit">Filter</button>
+    </form>
+</body> -->
+
